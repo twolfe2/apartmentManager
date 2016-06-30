@@ -16,7 +16,7 @@ let app = express();
 //Database setup
 let mongoose = require('mongoose');
 
-let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/pizzadb';
+let mongoUrl = process.env.MONGODB_URI || 'mongodb://localhost/propertydb';
 
 mongoose.connect(mongoUrl, err => {
   console.log(err ||  `MongoDB connected at ${mongoUrl}`);
@@ -34,7 +34,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'house.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

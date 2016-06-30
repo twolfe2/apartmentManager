@@ -10,7 +10,8 @@ let apartmentSchema = new mongoose.Schema({
   curCapacity: {type: Number, default: 0},
   maxCapacity: {type: Number, required: true},
   tenants: [{type: mongoose.Schema.Types.ObjectId, ref: 'Tenant'}],
-  createdAt: {type: Date, default: Date.now}
+  createdAt: {type: Date, default: Date.now},
+  imageUrl: {type: String}
 });
 
 let Apartment = mongoose.model('Apartment', apartmentSchema);
