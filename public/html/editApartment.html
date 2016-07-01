@@ -1,7 +1,7 @@
 <div class="container">
-    <form class="col-md-8" ng-submit='addApartment()'>
+    <form class="col-md-8" ng-submit='editApartment()'>
         <div class="text-center">
-            <h3>Add a New Apartment:</h3>
+            <h3>Edit Apartment:</h3>
         </div>
         <div class="form-group">
             <label for="name">Name</label>
@@ -27,7 +27,8 @@
             <label for="imageUrl">Image URL</label>
             <input type="url" class="form-control" id="imageUrl" placeholder="Image URL" ng-model='newApartment.imageUrl'>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Add Property</button>
+
+        <button type="submit" class="btn btn-primary btn-block" >Edit Property</button>
     </form>
 </div>
 <!-- </div> -->

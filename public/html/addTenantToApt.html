@@ -1,0 +1,23 @@
+<div class="container">
+<div class="text-center"><h2>Adding a Tenant to {{name}}</h2>
+  <h5>Select a Tenant below (one must be added if none are showing)</h5>
+</div>
+  <table class="table table">
+    <thead>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Age</th>
+
+    </thead>
+    <tbody>
+    <tr ng-repeat='tenant in tenants track by tenant._id' ng-if="!tenant.apartmentName" ng-click='addTenantToApt(tenant._id)'>
+      <td>{{tenant.name}}</td>
+      <td>{{tenant.address}}</td>
+      <td>{{tenant.age}}</td>
+    </tr>
+     
+    </tbody>
+
+  </table>
+<button class="btn btn-block btn-primary" ui-sref='addTenant'>Add New Tenant</button> 
+</div>

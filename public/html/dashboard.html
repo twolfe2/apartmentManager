@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <!-- <pre>{{stats | json}}</pre> -->
+    <div class="col-md-6 col-xs-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Capacity Info</h2>
+            </div>
+            <div class="panel-body">
+            <h6 class="text-left">Capacity Used:</h6>
+               <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{(stats.numTenants/stats.numRooms)*100}}%" aria-valuemin="0" aria-valuemax="100" style="width:{{(stats.numTenants/stats.numRooms)*100}}%;">
+                    </div>
+                </div>
+                <ul>
+                  <li>Number of Units Rented: {{stats.numTenants}}</li>
+                  <li>Number of Units Remaining: {{stats. availableRooms}}</li>
+                  <li>Total Number of Rooms: {{stats.numRooms}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xs-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Revenue Info</h2>
+            </div>
+            <div class="panel-body">
+                <h6 class="text-left">Revenue Per Month:</h6>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{(stats.totalRent/stats.possibleTotal)*100}}%" aria-valuemin="0" aria-valuemax="100" style="width:{{(stats.totalRent/stats.possibleTotal)*100}}%;">
+                    </div>
+                </div>
+                <!-- {{(stats.totalRent/stats.possibleTotal)*100}} -->
+                <ul>
+                  <li>Total Revenue Per Month: {{stats.totalRent | currency }}</li>
+                  <li>Possible Revenue Per Month: {{stats.possibleTotal | currency}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

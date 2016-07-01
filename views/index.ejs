@@ -11,6 +11,8 @@
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="/js/module.js"></script>
     <script src="/js/controllers.js"></script>
     <script src="/js/services.js"></script>
@@ -46,11 +48,15 @@
                         <a href="#/propertyManager" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Property Manager <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#/addApartment">Add New Property</a></li>
-                            
                         </ul>
                     </li>
                     <!-- <li><a href="#/propertyManager">Property Managment</a></li> -->
-                    <li><a href="#/tenantManager">Tenant Managment</a></li>
+                    <li class="dropdown">
+                        <a href="#/tenantManager" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tenant Manager <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/addTenant">Add New Tenant</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <!-- <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">

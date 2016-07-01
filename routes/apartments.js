@@ -13,7 +13,13 @@ let Tenant = require('../models/tenant');
 
 
 
-
+router.get('/stats', (req,res) => {
+  Apartment.getStats((err, stats) => {
+    if (err) return res.status(400).send(err);
+    // console.log('t0tal',total)
+    res.send(stats);
+  } )
+})
 
 
 //CRUD for aparments
@@ -85,6 +91,7 @@ router.put('/:apartmentId/addTenant/:tenantId', (req, res) => {
         Tenant.findById(req.params.tenantId, (err, tenant) => {
           if (err || !tenant) return res.status(400).send(err || { error: "Tenant not found" });
           tenant.apartment = req.params.apartmentId;
+          tenant.apartmentName = apartment.name;
           tenant.save((err, savedTenant) => {
             return res.status(err ? 400 : 200).send(err || savedTenant);
             // res.send(savedTenant);
@@ -116,6 +123,7 @@ router.delete('/:apartmentId/removeTenant/:tenantId', (req, res) => {
       Tenant.findById(req.params.tenantId, (err, tenant) => {
         if (err || !tenant) return res.status(400).send(err || { error: "Tenant not found" });
         tenant.apartment = null;
+        tenant.apartmentName = '';
         tenant.save((err, savedTenant) => {
           if(err) return res.status(err ? 400 : 200).send(err);
           // res.send(result);

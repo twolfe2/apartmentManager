@@ -1,0 +1,27 @@
+<div class="container">
+  <table class="table table">
+    <thead>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Age</th>
+      <th>Property</th>
+      <th>Modify</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat='tenant in tenants track by tenant._id' ui-sref="tenantInfo({id: tenant._id})">
+
+      <td>{{tenant.name}}</td>
+      <td>{{tenant.address}}</td>
+      <td>{{tenant.age}}</td>
+      <td>{{tenant.apartmentName}}</td>
+      <td>
+        <button class="btn btn-danger btn-xs" ng-click='deleteTenant(tenant._id); $event.stopPropagation();'>X</button>
+        <button class="btn btn-success btn-xs" ng-click='invokeEdit(tenant._id, tenant); $event.stopPropagation();'>Edit</button>
+      </td>
+    </tr>
+      
+    </tbody>
+  </table>
+
+
+</div>

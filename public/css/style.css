@@ -1,0 +1,27 @@
+table tr:hover {
+  background-color: rgb(226, 226, 226);
+
+}
+
+table td:hover {
+  cursor:pointer;
+}
+
+.apartments:hover {
+  background-color: rgb(226, 226, 226);
+  cursor:pointer;
+}
+
+
+.thumbnail a img { 
+  min-height:175px; 
+  /*min-width: 175px;*/
+  height:200px; 
+  /*max-width: 250px;*/
+
+} 
+
+.thumbnail {
+  /*display: inline-block;*/
+  max-width: 350px;
+}

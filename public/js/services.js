@@ -5,6 +5,14 @@ var app = angular.module('myApp');
 
 
 app.service('Apartment', function($http) {
+  this.getStats = () => {
+    return $http.get('/api/apartments/stats')
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  }
 
   this.getApartments = () => {
     return $http.get('/api/apartments')
@@ -15,7 +23,7 @@ app.service('Apartment', function($http) {
       });
   }
 
-this.getApartment = (apartmentId) => {
+  this.getApartment = (apartmentId) => {
     return $http.get(`/api/apartments/${apartmentId}`)
       .catch(err => {
         if (err) {
@@ -51,6 +59,14 @@ this.getApartment = (apartmentId) => {
       });
   }
 
+  this.addTenantToApt = (aptId, tenantId) => {
+    return $http.put(`/api/apartments/${aptId}/addTenant/${tenantId}`)
+      .catch(err => {
+        if (err) {
+          console.log(err);
+        }
+      });
+  }
 
 });
 
@@ -82,7 +98,7 @@ app.service('Tenant', function($http) {
 
 
   this.addTenant = tenantObj => {
-    return http.post('/api/tenants', tenantObj)
+    return $http.post('/api/tenants', tenantObj)
       .catch(err => {
         if (err) {
           console.log(err);

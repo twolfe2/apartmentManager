@@ -1,16 +1,17 @@
 <div class="container">
     <div class="row">
-        <div ng-repeat='apartment in apartments'>
+        <div ng-repeat='apartment in apartments track by $index'>
             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail apartments">
                     <a ui-sref='apartmentInfo({id: apartment._id})'>
-                        <img src="http://thumbs.trulia-cdn.com/pictures/thumbs_6/ps.79/8/e/6/5/picture-uh=1b51548fa63bdcf66eefac6c5ea7c75-ps=8e65a98bdc498265fae3f6729bbd29f7-Venture-Apartment-619-N-Segoe-Rd-Madison-WI-53705.jpg" alt="...">
+                        <img src="{{apartment.imageUrl || altImage }}" alt="...">
                         <div class="caption">
                             <h3>{{apartment.name}}</h3>
-                    </a>
-                    <p>{{apartment._id}}</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> 
-                    <a href="#" class="btn btn-default" role="button">Button</a></p>
+                            <p>{{apartment._id}}</p>
+                        </a>
+                        <p><a class="btn btn-primary" role="button" ui-sref='addTenantToApt({id: apartment._id, name: apartment.name})'>Add Tenant</a>
+                            <a class="btn btn-success" role="button" ui-sref='editApartment({id: apartment._id, apartment})'>Edit</a>
+                            <a class="btn btn-danger" role="button" ng-click='deleteApartment(apartment._id)'>Delete</a></p>
                     </div>
                 </div>
             </div>
