@@ -42,6 +42,7 @@ router.route('/:id')
   .delete((req, res) => {
     Apartment.findByIdAndRemove(req.params.id, (err) => {
       if (err) return res.status(400).send(err);
+      
       res.send();
     });
   })

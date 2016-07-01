@@ -18,7 +18,7 @@
 </head>
 
 <body ng-app='myApp' ng-controller='mainCtrl'>
-  <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -35,14 +35,22 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <!-- <li> <a ui-sref="flashcards">Flashcards</a></li> -->
-                    <li class="dropdown">
-                        <a href="/#/dashboard" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashboard<span class="caret"></span></a>
-                      <!--   <ul class="dropdown-menu">
+                    <!-- <li class="dropdown"> -->
+                    <li><a href="/#/dashboard">Dashboard</a></li>
+                    <!--   <ul class="dropdown-menu">
                             <li><a href="/#/flashcards">Controll Panel</a></li>
                             <li><a href="/#/addCard"></a></li>
                         </ul> -->
+                    <!--       </li> -->
+                    <li class="dropdown">
+                        <a href="#/propertyManager" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Property Manager <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#/addApartment">Add New Property</a></li>
+                            
+                        </ul>
                     </li>
-                    <li><a href="#/addProperty">Add Property</a></li>
+                    <!-- <li><a href="#/propertyManager">Property Managment</a></li> -->
+                    <li><a href="#/tenantManager">Tenant Managment</a></li>
                 </ul>
                 <!-- <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
@@ -71,7 +79,6 @@
     <div class="container">
         <ui-view></ui-view>
     </div>
-   
 </body>
 
 </html>
